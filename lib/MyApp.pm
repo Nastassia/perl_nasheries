@@ -36,4 +36,16 @@ post '/nashed' => sub {
   redirect '/';
   # return "<h2>". $poem . "</h2>"
 };
+
+get '/nashery/:id' => sub {
+  my $nashery = database->quick_select('nasheries', {id => param "id"});
+  template 'nashed', {nashery => $nashery};
+};
+
+post '/nashery/:id' => sub {
+  my $title = param "title";
+  my $poem = param "poem";
+  database->quick_update('nasheries', {id => param "id"}, {title => $title, poem => $poem});
+  redirect '/';
+};
 true;
