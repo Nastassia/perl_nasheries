@@ -1,0 +1,18 @@
+#wrapper {
+  margin: 0 auto;
+  width: 60%;
+}
+
+textarea {
+  width: 280px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-bottom: 5px;
+}

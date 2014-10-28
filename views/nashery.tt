@@ -1,6 +1,7 @@
 <html>
   <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/my_style.css" rel="stylesheet">
     <script src="javascripts/script.js"></script>
     <title>Nashed::Grounds</title>
   </head>

@@ -1,6 +1,7 @@
 <html>
   <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/my_style.css" rel="stylesheet">
     <script src="javascripts/script.js"></script>
     <title>Nashed::Grounds</title>
   </head>
@@ -15,7 +16,7 @@
       </textarea><br />
       <button>Update It!</button><br />
       </form>
-      <a href="/destroy/<% nashery.id %>"><button>Delete It!</button></a>
+      <a href="/nashery/<% nashery.id %>/destroy"><button>Delete It!</button></a>
     </div>
   </body>
 </html>

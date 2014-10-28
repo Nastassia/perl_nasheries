@@ -38,12 +38,6 @@ post '/nashed' => sub {
 };
 
 
-get '/destroy/:id' => sub {
-  my $id = param "id";
-  database->quick_delete('nasheries', {id => $id});
-  redirect '/';
-};
-
 get '/nashery/:id' => sub {
   my $nashery = database->quick_select('nasheries', {id => param "id"});
   template 'nashed', {nashery => $nashery};
@@ -53,6 +47,12 @@ post '/nashery/:id' => sub {
   my $title = param "title";
   my $poem = param "poem";
   database->quick_update('nasheries', {id => param "id"}, {title => $title, poem => $poem});
+  redirect '/';
+};
+
+get '/nashery/:id/destroy' => sub {
+  my $id = param "id";
+  database->quick_delete('nasheries', {id => $id});
   redirect '/';
 };
 
