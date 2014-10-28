@@ -14,8 +14,8 @@
       <% nashery.poem %>
       </textarea><br />
       <button>Update It!</button><br />
-      <a href="/nashery/<% nashery.id %>/destroy"><button>Delete It!</button></a>
       </form>
+      <a href="/destroy/<% nashery.id %>"><button>Delete It!</button></a>
     </div>
   </body>
 </html>
