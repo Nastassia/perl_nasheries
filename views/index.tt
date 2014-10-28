@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="javascripts/script.js"></script>
+    <title>Get Nashed</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>The Nasheries</h2>
+      <div id="nasheries">
+        <%= nasheries %>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
