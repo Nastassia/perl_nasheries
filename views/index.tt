@@ -8,7 +8,10 @@
     <div id="wrapper">
       <h2>The Nasheries</h2>
       <div id="nasheries">
-        <%= nasheries %>
+        <!-- <% for x in nasheries   %> -->
+        <% nasheries.poem %>
+        <!-- <% end %> -->
+
 
 
 

@@ -18,8 +18,14 @@ get '/' => sub {
     # my @nasheries = database->fetchall_arrayref({});
 
     # template 'index', {nashery=>$psql->fetchrow_hashref};
-    my @nasheries => $psql->fetchall_arrayref({});
-    template 'index', {nasheries => @nasheries};
+    my @nasheries;
+    my @show_nasheries;
+    # while (@nasheries = $psql->fetchrow_array){
+    #   @show_nasheries = @nasheries;
+    # }
+    template 'index', {nasheries =>$psql->fetchrow_hashref};
+
+    # template 'index', {nasheries => $nasheries};
     # template 'index', { nasheries => $psql };
 };
 
@@ -38,4 +44,4 @@ post '/nashed' => sub {
   database->quick_insert('nasheries', {poem => $poem});
   # return "<h2>". $poem . "</h2>"
 };
-true;
+# true;
