@@ -6,18 +6,19 @@
   </head>
   <body>
     <div id="wrapper">
+
       <h2>The Nasheries</h2>
-      <div id="nasheries">
-
-        <% for poem in nasheries %>
-          <% for x in poem %>
-            <% x.poem %><br />
+      <a href="/nashery">Enter a Nashery</a>
+        <div id="nasheries">
+          <% for post in nasheries %>
+            <% for x in post %>
+            <div id="post">
+              <a href="/nashery/<% x.id %>"><h4><% x.title %></h4></a>
+              <% x.poem %>
+            </div>
+            <% end %>
           <% end %>
-        <% end %>
-
-
-
-      </div>
+        </div>
     </div>
   </body>
 </html>

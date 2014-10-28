@@ -16,22 +16,7 @@ get '/' => sub {
     $psql->execute();
     my @nasheries = $psql->fetchall_arrayref({});
     template 'index', {nasheries => \@nasheries };
-    # template 'index', {\@nasheries}
-    # return \@nasheries; << THIS WORKS >>
-    # template 'index', {nashery=>$psql->fetchrow_hashref};
-    # while (@nasheries = $psql->fetchrow_array){
-    #   @show_nasheries = @nasheries;
-    # }
-          # my @nasheries = ();
-          # #
-          # while (@nasheries = $psql->fetchrow_array){
-          #
-          #   push @nasheries, $_;
-          # } THIS DOESN'T WORK DUE TO SCOPE.
-          # return \@nasheries;
 
-    # template 'index', {nasheries => $nasheries};
-    # template 'index', { nasheries => $psql };
 };
 
 get '/hello/:name' => sub {
@@ -45,8 +30,10 @@ get '/nashery' => sub {
 };
 
 post '/nashed' => sub {
+  my $title = param "title";
   my $poem = param "nashed";
-  database->quick_insert('nasheries', {poem => $poem});
+  database->quick_insert('nasheries', {title => $title, poem => $poem});
+  redirect '/';
   # return "<h2>". $poem . "</h2>"
 };
-# true;
+true;

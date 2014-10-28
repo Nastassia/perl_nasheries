@@ -5,12 +5,15 @@
     <title>Nashed::Grounds</title>
   </head>
   <body>
-    <h2>Insert a Nashery</h2>
-    <form action="/nashed" method="POST">
-    <textarea name="nashed">
-    </textarea><br />
-    <button>Nash It!</button>
-    </form>
-
+    <div id="wrapper">
+      <h2>Insert a Nashery</h2>
+      <a href="/">The Nasheries</a>
+      <form action="/nashed" method="POST">
+      <input type="text" name="title" placeholder="Nashery Title"><br />
+      <textarea name="nashed">
+      </textarea><br />
+      <button>Nash It!</button>
+      </form>
+    </div>
   </body>
 </html>
