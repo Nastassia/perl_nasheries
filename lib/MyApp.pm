@@ -11,19 +11,24 @@ set plugins => { Database => { driver => "Pg", database => "nashery"}};
 our $VERSION = '0.1';
 
 get '/' => sub {
-    my $t = engine 'template';
     my $sql = "select * from nasheries";
     my $psql = database->prepare($sql);
     $psql->execute();
-    # my @nasheries = database->fetchall_arrayref({});
-
+    my @nasheries = $psql->fetchall_arrayref({});
+    template 'index', {nasheries => \@nasheries };
+    # template 'index', {\@nasheries}
+    # return \@nasheries; << THIS WORKS >>
     # template 'index', {nashery=>$psql->fetchrow_hashref};
-    my @nasheries;
-    my @show_nasheries;
     # while (@nasheries = $psql->fetchrow_array){
     #   @show_nasheries = @nasheries;
     # }
-    template 'index', {nasheries =>$psql->fetchrow_hashref};
+          # my @nasheries = ();
+          # #
+          # while (@nasheries = $psql->fetchrow_array){
+          #
+          #   push @nasheries, $_;
+          # } THIS DOESN'T WORK DUE TO SCOPE.
+          # return \@nasheries;
 
     # template 'index', {nasheries => $nasheries};
     # template 'index', { nasheries => $psql };
